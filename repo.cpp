@@ -12,9 +12,7 @@
 #include <boost/asio.hpp>
 #include <sstream>
 
-// #include "nd-packet-format.h"
 #include "pubsub-helpers.h"
-// #include "nfdc-helpers.h"
 #include "repo-helpers.h"
 
 using namespace ndn;
@@ -54,8 +52,6 @@ public:
     is_ready = false;
   }
 
-  // TODO: remove face on SIGINT, SIGTERM
-
   void registerRoute(const Name& route_name, int face_id,
                      int cost = 0) 
   {
@@ -91,8 +87,6 @@ public:
   {
     if (!is_ready)
       return;
-
-    //  /ucla/cs/repo/insert/<RepoCommandParameter>/<timestamp>/<random-value>/<SignatureInfo>/<SignatureValue>
 
     Name name(m_repo_name);
     name.append("insert");
@@ -167,7 +161,6 @@ public:
       int route_cost = readNonNegativeIntegerAs<int>(route_cost_block);
       Block flags_block = control_params.get(FLAGS);
       int flags = readNonNegativeIntegerAs<int>(flags_block);
-
 
       is_ready = true;
       std::cout << "RepoInsert: Bootstrap succeeded\n";
