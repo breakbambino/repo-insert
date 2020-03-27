@@ -2,7 +2,7 @@
 NDN Repo Integration into NDN-Lite. This example enable you to insert Data into a local Repo
 
 ## Steps
-* Install NDN-Repo
+* Install [NDN-Repo](https://github.com/JonnyKong/ndn-python-repo)
 * Modify Repo configurations here based on your situation. If you all use default settings, ``home_prefix``, ``repo_name`` should be OK.
 ```
     class Options
