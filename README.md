@@ -27,3 +27,4 @@ NDN Repo Integration into NDN-Lite. This example enable you to insert Data into 
     m_client->registerRoute(m_options.home_prefix, 404);
     m_client->registerRoute("/testrepo", 368);
 ```
+* ``make`` and ``./repo``. It may need keychain access.
